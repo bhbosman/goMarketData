@@ -2,10 +2,9 @@ package main
 
 import (
 	"context"
-	"github.com/bhbosman/goMarketData/internal/buildMarketDataSheet"
 	"github.com/bhbosman/goMarketData/internal/incomingMarketData"
-	"github.com/bhbosman/goMarketData/publish/toGoogle/MarketPrices/register"
-	"github.com/bhbosman/goMarketData/publish/toGoogle/MarketPrices/service"
+	"github.com/bhbosman/goMarketData/internal/publish/toGoogle/MarketPrices/register"
+	"github.com/bhbosman/goMarketData/internal/publish/toGoogle/MarketPrices/service"
 	app2 "github.com/bhbosman/gocommon/app"
 	"os"
 
@@ -26,9 +25,10 @@ func main() {
 		//logger: log.New(&stream.NullWriter{}, "", log.LstdFlags),
 		logger: log.New(os.Stderr, "", log.LstdFlags),
 	}
-	var services []*service.Service
+	var services []*service.MarketPricesLatestService
 
 	app := fx.New(
+		fx.StartTimeout(time.Hour),
 		fx.Logger(settings.logger),
 		gologging.ProvideLogFactory(settings.logger, nil),
 		app2.RegisterRootContext(),
@@ -37,19 +37,19 @@ func main() {
 		register.ProvideMarketPriceGoogleApplication(),
 		register.ProvideMarketPricesClients(),
 		register.ProvideMarketPricesServices(),
-		fx.Provide(fx.Annotated{Target: buildMarketDataSheet.NewSheetBuilder}),
+		//fx.Provide(fx.Annotated{Target: buildMarketDataSheet.NewSheetBuilder}),
 		incomingMarketData.ProvideLunoMarketDataDialer(1, "tcp4://127.0.0.1:3001"),
-		fx.Invoke(func(params struct {
-			fx.In
-			SheetBuilder *buildMarketDataSheet.SheetBuilder
-			Lifecycle    fx.Lifecycle
-		}) {
-			params.Lifecycle.Append(
-				fx.Hook{
-					OnStart: params.SheetBuilder.Start,
-					OnStop: params.SheetBuilder.Stop,
-				})
-		}),
+		//fx.Invoke(func(params struct {
+		//	fx.In
+		//	SheetBuilder *buildMarketDataSheet.SheetBuilder
+		//	Lifecycle    fx.Lifecycle
+		//}) {
+		//	params.Lifecycle.Append(
+		//		fx.Hook{
+		//			OnStart: params.SheetBuilder.Start,
+		//			OnStop: params.SheetBuilder.Stop,
+		//		})
+		//}),
 		fx.Invoke(
 			func(params struct {
 				fx.In
@@ -76,35 +76,7 @@ func main() {
 	}
 	app.Run()
 
-	// allow shutdown to complete
+
 	time.Sleep(time.Second)
 
-	//values := make([][]interface{}, 2)
-	//values[0] = make([]interface{}, 2)
-	//values[1] = make([]interface{}, 2)
-	//values[0][0] = 1
-	//values[0][1] = 2
-	//values[1][0] = 3
-	//values[1][1] = 4
-	//for _, service := range services {
-	//	updateCall := service.SheetService.Spreadsheets.Values.Update(
-	//		service.Id,
-	//		"A1:B2",
-	//		&sheets.ValueRange{
-	//			MajorDimension:  "ROWS",
-	//			Range:           "",
-	//			Values:          values,
-	//			ServerResponse:  googleapi.ServerResponse{},
-	//			ForceSendFields: nil,
-	//			NullFields:      nil,
-	//		})
-	//	updateCall.ValueInputOption("RAW")
-	//	valuesResponse, err := updateCall.Do()
-	//	if err != nil {
-	//		println(err.Error())
-	//	}
-	//	if valuesResponse != nil {
-	//	}
-	//	println("good")
-	//}
 }

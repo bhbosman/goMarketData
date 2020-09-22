@@ -2,7 +2,8 @@ package register
 
 import (
 	"context"
-	"github.com/bhbosman/goMarketData/publish/toGoogle/MarketPrices/service"
+	"github.com/bhbosman/goMarketData/internal/publish/toGoogle/MarketPrices/service"
+	"github.com/cskr/pubsub"
 	"go.uber.org/fx"
 	"golang.org/x/oauth2"
 	"google.golang.org/api/drive/v3"
@@ -17,8 +18,9 @@ func ProvideMarketPricesServices() fx.Option {
 				fx.In
 				MarketPricesConfig *oauth2.Config     `name:"MarketPricesApplication"`
 				NamedHttpClient    []*NamedHttpClient `group:"MarketPricesClients"`
-			}) ([]*service.Service, error) {
-				var services []*service.Service
+				PubSub             *pubsub.PubSub     `name:"Application"`
+			}) ([]*service.MarketPricesLatestService, error) {
+				var services []*service.MarketPricesLatestService
 				for _, namedHttpClient := range params.NamedHttpClient {
 					drive, err := drive.NewService(context.Background(), option.WithHTTPClient(namedHttpClient.Client))
 					if err != nil {
@@ -31,7 +33,8 @@ func ProvideMarketPricesServices() fx.Option {
 					service := service.NewService(
 						namedHttpClient.Name,
 						drive,
-						sheets)
+						sheets,
+						params.PubSub)
 					services = append(services, service)
 				}
 				return services, nil
@@ -40,7 +43,7 @@ func ProvideMarketPricesServices() fx.Option {
 			func(params struct {
 				fx.In
 				Lifecycle fx.Lifecycle
-				Services  []*service.Service
+				Services  []*service.MarketPricesLatestService
 			}) {
 				for _, s := range params.Services {
 					service := s
@@ -56,3 +59,13 @@ func ProvideMarketPricesServices() fx.Option {
 
 			}))
 }
+
+
+
+
+
+
+
+
+
+
