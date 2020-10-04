@@ -36,6 +36,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/bhbosman/goMessages v0.0.0-20200922081308-8c8f88094624 h1:0Iz4oHdkL/HUXAoREAje5lURhjXBaWlu/G7PcRjh7h0=
 github.com/bhbosman/goMessages v0.0.0-20200922081308-8c8f88094624/go.mod h1:iBUstMHvgPQ3Aa06jh/jmC9fxYpJk8fPjM89qEorO/A=
+github.com/bhbosman/goMessages v0.0.0-20201004192822-66d168b4b744 h1:Y2Afk1ItXBswagQd/wTi6/3ZbxoYZkgTkJWHJ8c2bT0=
+github.com/bhbosman/goMessages v0.0.0-20201004192822-66d168b4b744/go.mod h1:iBUstMHvgPQ3Aa06jh/jmC9fxYpJk8fPjM89qEorO/A=
 github.com/bhbosman/gocommon v0.0.0-20200921215456-bfddd9bb050e h1:4o6OzhytoIFiDaOv1+c+I6+xGXWtr6AYWU8wzD/twA8=
 github.com/bhbosman/gocommon v0.0.0-20200921215456-bfddd9bb050e/go.mod h1:bl0WcS0qhk3nzfVrnXxZj1c+JwHwpjw2iTIOU5CQZ+8=
 github.com/bhbosman/gocomms v0.0.0-20200922180846-e1a99ac26663 h1:n7yZ0cvNf9/uq4AvjFQ9e0OviblgLo5zGQ7xKW3SKV0=

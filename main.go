@@ -37,8 +37,8 @@ func main() {
 		register.ProvideMarketPriceGoogleApplication(),
 		register.ProvideMarketPricesClients(),
 		register.ProvideMarketPricesServices(),
-		//fx.Provide(fx.Annotated{Target: buildMarketDataSheet.NewSheetBuilder}),
 		incomingMarketData.ProvideLunoMarketDataDialer(1, "tcp4://127.0.0.1:3001"),
+		incomingMarketData.ProvideKrakenMarketDataDialer(1, "tcp4://127.0.0.1:3011"),
 		//fx.Invoke(func(params struct {
 		//	fx.In
 		//	SheetBuilder *buildMarketDataSheet.SheetBuilder

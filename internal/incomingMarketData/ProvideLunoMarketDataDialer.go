@@ -40,3 +40,15 @@ func ProvideLunoMarketDataDialer(maxConnections int, url string) fx.Option {
 
 	return fx.Options(opt...)
 }
+
+
+
+
+
+
+
+
+
+
+
+

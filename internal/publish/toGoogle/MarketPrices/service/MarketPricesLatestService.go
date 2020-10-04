@@ -111,18 +111,18 @@ loop:
 }
 
 func (self *MarketPricesLatestService) handlePublishTop(incomingMessage *marketDataStream.PublishTop5) error {
-	if data, ok := self.Top5Map[incomingMessage.Instrument]; ok {
+	if data, ok := self.Top5Map[incomingMessage.UniqueName]; ok {
 		data.data = incomingMessage
 		//data.touched = true
 	} else {
-		self.availableRangeName[incomingMessage.Instrument] = true
+		self.availableRangeName[incomingMessage.UniqueName] = true
 		plate := make([][]interface{}, 5)
 		plate[0] = make([]interface{}, 4)
 		plate[1] = make([]interface{}, 4)
 		plate[2] = make([]interface{}, 4)
 		plate[3] = make([]interface{}, 4)
 		plate[4] = make([]interface{}, 4)
-		self.Top5Map[incomingMessage.Instrument] = &top5Data{
+		self.Top5Map[incomingMessage.UniqueName] = &top5Data{
 			data:    incomingMessage,
 			//touched: true,
 			plate:   plate,
@@ -152,8 +152,12 @@ func (self *MarketPricesLatestService) getAvailableData() *sheets.ValueRange {
 
 		values := make([][]interface{}, len(ss))
 		for i := 0; i < len(values); i++ {
-			values[i] = make([]interface{}, 1)
+			values[i] = make([]interface{}, 3)
 			values[i][0] = ss[i]
+			if d, ok := self.Top5Map[ss[i]]; ok {
+				values[i][1] = d.data.Source
+				values[i][2] = d.data.Instrument
+			}
 		}
 
 		valueRange := &sheets.ValueRange{
@@ -241,7 +245,7 @@ func (self *MarketPricesLatestService) createSpreadSheet() (*sheets.Spreadsheet,
 		Name:         "AvailableData",
 		NamedRangeId: "AvailableData",
 		Range: &sheets.GridRange{
-			EndColumnIndex:   1,
+			EndColumnIndex:   3,
 			EndRowIndex:      0,
 			SheetId:          1,
 			StartColumnIndex: 0,
