@@ -19,7 +19,7 @@ import (
 type ConnectionReactor struct {
 	impl.BaseConnectionReactor
 	MessageRouter *messageRouter.MessageRouter
-	PubSub *pubsub.PubSub
+	PubSub        *pubsub.PubSub
 }
 
 func NewConnectionReactor(

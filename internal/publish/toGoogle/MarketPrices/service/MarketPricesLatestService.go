@@ -14,9 +14,9 @@ import (
 )
 
 type top5Data struct {
-	data    *marketDataStream.PublishTop5
+	data *marketDataStream.PublishTop5
 	//touched bool
-	plate   [][]interface{}
+	plate [][]interface{}
 }
 
 type TimerMessage struct {
@@ -123,9 +123,9 @@ func (self *MarketPricesLatestService) handlePublishTop(incomingMessage *marketD
 		plate[3] = make([]interface{}, 4)
 		plate[4] = make([]interface{}, 4)
 		self.Top5Map[incomingMessage.UniqueName] = &top5Data{
-			data:    incomingMessage,
+			data: incomingMessage,
 			//touched: true,
-			plate:   plate,
+			plate: plate,
 		}
 	}
 	return nil
@@ -214,7 +214,7 @@ func (self *MarketPricesLatestService) handleTimerMessage(incomingMessage *Timer
 			Data = append(Data, valueRange)
 		}
 		valueRanges := self.getTop5()
-		for _, valueRange = range valueRanges{
+		for _, valueRange = range valueRanges {
 			if valueRange != nil {
 				Data = append(Data, valueRange)
 			}
@@ -301,31 +301,31 @@ func (self *MarketPricesLatestService) getTop5() []*sheets.ValueRange {
 		if _, ok := self.namedRanges[k]; ok {
 			//if v.touched {
 			//	v.touched = false
-				for i := 0; i < 5; i++ {
-					if len(v.data.Bid) > i {
-						v.plate[i][0] = v.data.Bid[i].Volume
-						v.plate[i][1] = v.data.Bid[i].Price
-					} else {
-						v.plate[i][0] = 0.0
-						v.plate[i][1] = 0.0
-					}
-					if len(v.data.Ask) > i {
-						v.plate[i][2] = v.data.Ask[i].Price
-						v.plate[i][3] = v.data.Ask[i].Volume
-					} else {
-						v.plate[i][2] = 0.0
-						v.plate[i][3] = 0.0
-					}
+			for i := 0; i < 5; i++ {
+				if len(v.data.Bid) > i {
+					v.plate[i][0] = v.data.Bid[i].Volume
+					v.plate[i][1] = v.data.Bid[i].Price
+				} else {
+					v.plate[i][0] = 0.0
+					v.plate[i][1] = 0.0
 				}
-				valueRange := &sheets.ValueRange{
-					MajorDimension:  "ROWS",
-					Range:           k,
-					Values:          v.plate,
-					ServerResponse:  googleapi.ServerResponse{},
-					ForceSendFields: nil,
-					NullFields:      nil,
+				if len(v.data.Ask) > i {
+					v.plate[i][2] = v.data.Ask[i].Price
+					v.plate[i][3] = v.data.Ask[i].Volume
+				} else {
+					v.plate[i][2] = 0.0
+					v.plate[i][3] = 0.0
 				}
-				result = append(result, valueRange)
+			}
+			valueRange := &sheets.ValueRange{
+				MajorDimension:  "ROWS",
+				Range:           k,
+				Values:          v.plate,
+				ServerResponse:  googleapi.ServerResponse{},
+				ForceSendFields: nil,
+				NullFields:      nil,
+			}
+			result = append(result, valueRange)
 			//}
 		}
 	}

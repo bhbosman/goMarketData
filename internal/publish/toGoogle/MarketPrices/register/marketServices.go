@@ -59,13 +59,3 @@ func ProvideMarketPricesServices() fx.Option {
 
 			}))
 }
-
-
-
-
-
-
-
-
-
-

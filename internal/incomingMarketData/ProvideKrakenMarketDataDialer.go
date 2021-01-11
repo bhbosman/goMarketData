@@ -17,9 +17,9 @@ func ProvideKrakenMarketDataDialer(maxConnections int, url string) fx.Option {
 			Group: impl.ConnectionReactorFactoryConst,
 			Target: func(
 				params struct {
-				fx.In
-				PubSub *pubsub.PubSub `name:"Application"`
-			}) (intf.IConnectionReactorFactory, error) {
+					fx.In
+					PubSub *pubsub.PubSub `name:"Application"`
+				}) (intf.IConnectionReactorFactory, error) {
 
 				return NewConnectionReactorFactory(LunoMarketData, params.PubSub), nil
 
@@ -40,4 +40,3 @@ func ProvideKrakenMarketDataDialer(maxConnections int, url string) fx.Option {
 
 	return fx.Options(opt...)
 }
-

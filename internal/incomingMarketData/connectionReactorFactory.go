@@ -8,8 +8,12 @@ import (
 )
 
 type ConnectionReactorFactory struct {
-	name string
+	name   string
 	PubSub *pubsub.PubSub
+}
+
+func (self *ConnectionReactorFactory) Values(inputValues map[string]interface{}) (map[string]interface{}, error) {
+	return make(map[string]interface{}), nil
 }
 
 func NewConnectionReactorFactory(name string, PubSub *pubsub.PubSub) *ConnectionReactorFactory {
