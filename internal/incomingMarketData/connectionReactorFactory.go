@@ -16,7 +16,7 @@ func (self *ConnectionReactorFactory) Values(inputValues map[string]interface{})
 	return make(map[string]interface{}), nil
 }
 
-func NewConnectionReactorFactory(name string, PubSub *pubsub.PubSub) *ConnectionReactorFactory {
+func NewConnectionReactorFactory(name string, PubSub *pubsub.PubSub) intf.IConnectionReactorFactory {
 	return &ConnectionReactorFactory{
 		name:   name,
 		PubSub: PubSub,

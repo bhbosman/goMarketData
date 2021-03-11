@@ -6,6 +6,7 @@ import (
 	"github.com/bhbosman/goMarketData/internal/publish/toGoogle/MarketPrices/register"
 	"github.com/bhbosman/goMarketData/internal/publish/toGoogle/MarketPrices/service"
 	app2 "github.com/bhbosman/gocommon/app"
+	"github.com/cskr/pubsub"
 	"os"
 
 	"github.com/bhbosman/gocomms/connectionManager"
@@ -27,18 +28,20 @@ func main() {
 	}
 	var services []*service.MarketPricesLatestService
 
+	pubSub := pubsub.New(32)
+
 	app := fx.New(
 		fx.StartTimeout(time.Hour),
 		fx.Logger(settings.logger),
 		gologging.ProvideLogFactory(settings.logger, nil),
-		app2.RegisterRootContext(),
+		app2.RegisterRootContext(pubSub),
 		connectionManager.RegisterDefaultConnectionManager(),
 		impl.RegisterAllConnectionRelatedServices(),
 		register.ProvideMarketPriceGoogleApplication(),
 		register.ProvideMarketPricesClients(),
 		register.ProvideMarketPricesServices(),
-		incomingMarketData.ProvideLunoMarketDataDialer(1, "tcp4://127.0.0.1:3001"),
-		incomingMarketData.ProvideKrakenMarketDataDialer(1, "tcp4://127.0.0.1:3011"),
+		incomingMarketData.ProvideLunoMarketDataDialer(1, "tcp4://127.0.0.1:3001", pubSub),
+		incomingMarketData.ProvideKrakenMarketDataDialer(pubSub, 1, "tcp4://127.0.0.1:3011"),
 		//fx.Invoke(func(params struct {
 		//	fx.In
 		//	SheetBuilder *buildMarketDataSheet.SheetBuilder

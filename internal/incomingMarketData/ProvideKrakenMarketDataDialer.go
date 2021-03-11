@@ -8,8 +8,9 @@ import (
 	"go.uber.org/fx"
 )
 
-func ProvideKrakenMarketDataDialer(maxConnections int, url string) fx.Option {
+func ProvideKrakenMarketDataDialer(pubSub *pubsub.PubSub, maxConnections int, url string) fx.Option {
 	const LunoMarketData = "KrakenMarketData"
+	cfr := NewConnectionReactorFactory(LunoMarketData, pubSub)
 	var opt []fx.Option
 	opt = append(
 		opt,
@@ -21,7 +22,7 @@ func ProvideKrakenMarketDataDialer(maxConnections int, url string) fx.Option {
 					PubSub *pubsub.PubSub `name:"Application"`
 				}) (intf.IConnectionReactorFactory, error) {
 
-				return NewConnectionReactorFactory(LunoMarketData, params.PubSub), nil
+				return cfr, nil
 
 			},
 		}))
@@ -33,8 +34,9 @@ func ProvideKrakenMarketDataDialer(maxConnections int, url string) fx.Option {
 			Target: netDial.NewNetDialApp(
 				LunoMarketData,
 				url,
-				impl.TransportFactoryCompressedName,
+				impl.CreateCompressedStack,
 				LunoMarketData,
+				cfr,
 				netDial.MaxConnectionsSetting(maxConnections)),
 		}))
 
