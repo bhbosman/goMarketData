@@ -3,16 +3,16 @@ module github.com/bhbosman/goMarketData
 go 1.18
 
 require (
-	github.com/bhbosman/goCommonMarketData v0.0.0-20220802122727-698b9feba01e
-	github.com/bhbosman/goCommsDefinitions v0.0.0-20230302063431-887458f90947
-	github.com/bhbosman/goCommsNetDialer v0.0.0-20220611181910-f23644b1b31a
-	github.com/bhbosman/goCommsNetListener v0.0.0-20220725171026-26c93ba8f02c
-	github.com/bhbosman/goCommsStacks v0.0.0-20220628053835-8e5ac6a0c20b
-	github.com/bhbosman/goFxApp v0.0.0-20220623192832-ed39b89a9b44
-	github.com/bhbosman/goFxAppManager v0.0.0-20220730103022-02c299931769
+	github.com/bhbosman/goCommonMarketData v0.0.0-20230302071905-68b90c2dabe4
+	github.com/bhbosman/goCommsDefinitions v0.0.0-20230302192649-bd0a3b710d8d
+	github.com/bhbosman/goCommsNetDialer v0.0.0-20230302062228-c88685956b15
+	github.com/bhbosman/goCommsNetListener v0.0.0-20230302062227-0285e8a8cd6f
+	github.com/bhbosman/goCommsStacks v0.0.0-20230302204344-9276aae2cb77
+	github.com/bhbosman/goFxApp v0.0.0-20230302094801-5074560d188e
+	github.com/bhbosman/goFxAppManager v0.0.0-20230302065223-2fa699f7166f
 	github.com/bhbosman/goMessages v0.0.0-20230302063433-258339efe599
-	github.com/bhbosman/gocommon v0.0.0-20230302065226-cf91cedfab33
-	github.com/bhbosman/gocomms v0.0.0-20220628074707-e93417aaaed2
+	github.com/bhbosman/gocommon v0.0.0-20230302071906-9b559c4a3731
+	github.com/bhbosman/gocomms v0.0.0-20230302192649-bdb38b94089c
 	github.com/bhbosman/goprotoextra v0.0.2-0.20210817141206-117becbef7c7
 	github.com/cskr/pubsub v1.0.2
 	github.com/reactivex/rxgo/v2 v2.5.0
@@ -27,7 +27,7 @@ require (
 
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
-	github.com/bhbosman/goConnectionManager v0.0.0-20220802122816-d9db41f332dc // indirect
+	github.com/bhbosman/goConnectionManager v0.0.0-20230302065222-d613f6fe8f80 // indirect
 	github.com/bhbosman/goUi v0.0.0-20230302065227-24c3cb06165e // indirect
 	github.com/bhbosman/goerrors v0.0.0-20220623084908-4d7bbcd178cf // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20220617132215-32f430d7de62 // indirect
