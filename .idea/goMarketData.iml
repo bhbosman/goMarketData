@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="Go" enabled="true" />
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../goCommonMarketData" />
+    <content url="file://$MODULE_DIR$/../goCommsDefinitions" />
+    <content url="file://$MODULE_DIR$/../goCommsStacks" />
+    <content url="file://$MODULE_DIR$/../goConnectionManager" />
+    <content url="file://$MODULE_DIR$/../goFxApp" />
+    <content url="file://$MODULE_DIR$/../goFxAppManager" />
+    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/../goUi" />
+    <content url="file://$MODULE_DIR$/../gocommon" />
+    <content url="file://$MODULE_DIR$/../gocomms" />
+    <content url="file://$MODULE_DIR$/../tview" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
