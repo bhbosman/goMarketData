@@ -31,7 +31,7 @@ require (
 	github.com/bhbosman/goUi v0.0.0-20230302065227-24c3cb06165e // indirect
 	github.com/bhbosman/goerrors v0.0.0-20220623084908-4d7bbcd178cf // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20220617132215-32f430d7de62 // indirect
-	github.com/cenkalti/backoff/v4 v4.0.0 // indirect
+	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/gdamore/encoding v1.0.0 // indirect
@@ -99,3 +99,5 @@ replace github.com/bhbosman/goCommonMarketData => ../goCommonMarketData
 replace github.com/cskr/pubsub => ../pubsub
 
 replace github.com/bhbosman/goCommsNetListener => ../goCommsNetListener
+
+replace github.com/reactivex/rxgo/v2 => ../goRx
