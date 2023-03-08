@@ -100,4 +100,4 @@ replace github.com/cskr/pubsub => ../pubsub
 
 replace github.com/bhbosman/goCommsNetListener => ../goCommsNetListener
 
-//replace github.com/reactivex/rxgo/v2 => ../goRx
+replace github.com/reactivex/rxgo/v2 => ../goRx
