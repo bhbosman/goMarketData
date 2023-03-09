@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/bhbosman/goCommonMarketData v0.0.0-20230302071905-68b90c2dabe4
-	github.com/bhbosman/goCommsDefinitions v0.0.0-20230307073322-f15f4b951cb9
+	github.com/bhbosman/goCommsDefinitions v0.0.0-20230308211643-24fe88b2378e
 	github.com/bhbosman/goCommsNetDialer v0.0.0-20230302062228-c88685956b15
 	github.com/bhbosman/goCommsNetListener v0.0.0-20230302062227-0285e8a8cd6f
 	github.com/bhbosman/goCommsStacks v0.0.0-20230302204344-9276aae2cb77
