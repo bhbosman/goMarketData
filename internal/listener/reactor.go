@@ -10,6 +10,7 @@ import (
 	"github.com/bhbosman/gocommon/messageRouter"
 	common3 "github.com/bhbosman/gocommon/model"
 	common2 "github.com/bhbosman/gocomms/common"
+	"github.com/bhbosman/gocomms/intf"
 	"github.com/bhbosman/goprotoextra"
 	"github.com/cskr/pubsub"
 	"github.com/reactivex/rxgo/v2"
@@ -108,7 +109,7 @@ func NewConnectionReactor(
 	UniqueReferenceService interfaces.IUniqueReferenceService,
 	FullMarketDataHelper fullMarketDataHelper.IFullMarketDataHelper,
 	FmdService fullMarketDataManagerService.IFmdManagerService,
-) (*reactor, error) {
+) (intf.IConnectionReactor, error) {
 	result := &reactor{
 		BaseConnectionReactor: common2.NewBaseConnectionReactor(
 			logger,
