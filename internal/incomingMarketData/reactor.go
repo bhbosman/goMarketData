@@ -12,6 +12,7 @@ import (
 	"github.com/bhbosman/gocommon/messages"
 	"github.com/bhbosman/gocommon/model"
 	"github.com/bhbosman/gocomms/common"
+	"github.com/bhbosman/gocomms/intf"
 	"github.com/cskr/pubsub"
 	"github.com/reactivex/rxgo/v2"
 	"go.uber.org/multierr"
@@ -51,14 +52,8 @@ func (self *reactor) Open() error {
 	return nil
 }
 
-func (self *reactor) Init(
-	onSendToReactor rxgo.NextFunc,
-	onSendToConnection rxgo.NextFunc,
-) (rxgo.NextFunc, rxgo.ErrFunc, rxgo.CompletedFunc, error) {
-	_, _, _, err := self.BaseConnectionReactor.Init(
-		onSendToReactor,
-		onSendToConnection,
-	)
+func (self *reactor) Init(params intf.IInitParams) (rxgo.NextFunc, rxgo.ErrFunc, rxgo.CompletedFunc, error) {
+	_, _, _, err := self.BaseConnectionReactor.Init(params)
 	if err != nil {
 		return nil, nil, nil, err
 	}
@@ -151,7 +146,7 @@ func NewConnectionReactor(
 	FullMarketDataHelper fullMarketDataHelper.IFullMarketDataHelper,
 	GoFunctionCounter GoFunctionCounter.IService,
 	FmdService fullMarketDataManagerService.IFmdManagerService,
-) *reactor {
+) intf.IConnectionReactor {
 	result := &reactor{
 		BaseConnectionReactor: common.NewBaseConnectionReactor(
 			logger,

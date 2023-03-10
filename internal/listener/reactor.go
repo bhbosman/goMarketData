@@ -28,14 +28,8 @@ type reactor struct {
 	FmdService             fullMarketDataManagerService.IFmdManagerService
 }
 
-func (self *reactor) Init(
-	onSendToReactor rxgo.NextFunc,
-	onSendToConnection rxgo.NextFunc,
-) (rxgo.NextFunc, rxgo.ErrFunc, rxgo.CompletedFunc, error) {
-	_, _, _, err := self.BaseConnectionReactor.Init(
-		onSendToReactor,
-		onSendToConnection,
-	)
+func (self *reactor) Init(params intf.IInitParams) (rxgo.NextFunc, rxgo.ErrFunc, rxgo.CompletedFunc, error) {
+	_, _, _, err := self.BaseConnectionReactor.Init(params)
 	if err != nil {
 		return nil, nil, nil, err
 	}
