@@ -5,39 +5,39 @@ import (
 	stream2 "github.com/bhbosman/goCommonMarketData/fullMarketData/stream"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataHelper"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataManagerService"
-	stream3 "github.com/bhbosman/goMessages/pingpong/stream"
 	"github.com/bhbosman/gocommon/GoFunctionCounter"
 	"github.com/bhbosman/gocommon/Services/interfaces"
 	"github.com/bhbosman/gocommon/messageRouter"
-	"github.com/bhbosman/gocommon/messages"
 	"github.com/bhbosman/gocommon/model"
 	"github.com/bhbosman/gocomms/common"
 	"github.com/bhbosman/gocomms/intf"
 	"github.com/cskr/pubsub"
 	"github.com/reactivex/rxgo/v2"
-	"go.uber.org/multierr"
 	"go.uber.org/zap"
 )
 
 type reactor struct {
 	common.BaseConnectionReactor
-	MessageRouter                     *messageRouter.MessageRouter
+	MessageRouter                     messageRouter.IMessageRouter
 	FullMarketDataHelper              fullMarketDataHelper.IFullMarketDataHelper
 	FmdService                        fullMarketDataManagerService.IFmdManagerService
-	externalFullMarketDataInstruments []string
+	externalFullMarketDataInstruments map[string]bool
 }
 
 func (self *reactor) Close() error {
-	var err error
-	fmdMessages := make([]interface{}, len(self.externalFullMarketDataInstruments))
-	for i, instrument := range self.externalFullMarketDataInstruments {
-		fmdMessages[i] = &stream2.FullMarketData_RemoveInstrumentInstruction{
-			FeedName:   self.UniqueReference,
-			Instrument: instrument,
-		}
+	fmdMessages := make([]interface{}, 0, len(self.externalFullMarketDataInstruments))
+	for key := range self.externalFullMarketDataInstruments {
+		fmdMessages = append(
+			fmdMessages,
+
+			&stream2.FullMarketData_RemoveInstrumentInstruction{
+				FeedName:   self.UniqueReference,
+				Instrument: key,
+			},
+		)
 	}
 	self.FmdService.MultiSend(fmdMessages...)
-	return multierr.Append(err, self.BaseConnectionReactor.Close())
+	return self.BaseConnectionReactor.Close()
 }
 
 func (self *reactor) Open() error {
@@ -71,45 +71,39 @@ func (self *reactor) Init(params intf.IInitParams) (rxgo.NextFunc, rxgo.ErrFunc,
 
 //goland:noinspection GoSnakeCaseUsage
 func (self *reactor) handleFullMarketData_InstrumentList_ResponseWrapper(incomingMessage *stream2.FullMarketData_InstrumentList_ResponseWrapper) {
-	incomingMessage.Data.FeedName = self.UniqueReference
-	registeredSources := make([]string, len(self.externalFullMarketDataInstruments), len(self.externalFullMarketDataInstruments))
-	for i, instrument := range self.externalFullMarketDataInstruments {
-		registeredSources[i] = self.FullMarketDataHelper.RegisteredSource(instrument)
+	removeInstruments := make(map[string]bool)
+	for s := range self.externalFullMarketDataInstruments {
+		removeInstruments[s] = true
 	}
 
-	// must check len here, otherwise we will deregister the whole self.OnSendToConnectionPubSubBag
-	if len(registeredSources) > 0 {
-		self.PubSub.Unsub(self.OnSendToConnectionPubSubBag, registeredSources...)
+	addInstruments := make(map[string]bool)
+	for _, s := range incomingMessage.Data.Instruments {
+		if _, ok := self.externalFullMarketDataInstruments[s.Instrument]; ok {
+			delete(removeInstruments, s.Instrument)
+		} else {
+			addInstruments[s.Instrument] = true
+		}
+	}
+	if len(removeInstruments) > 0 {
+		l := make([]string, 0, len(removeInstruments))
+		for s := range removeInstruments {
+			l = append(l, self.FullMarketDataHelper.RegisteredSource(s))
+			self.PubSub.Unsub(self.OnSendToConnectionPubSubBag, l...)
+		}
+	}
+	if len(addInstruments) > 0 {
+		l := make([]string, 0, len(addInstruments))
+		for s := range addInstruments {
+			l = append(l, self.FullMarketDataHelper.RegisteredSource(s))
+			self.externalFullMarketDataInstruments[s] = true
+		}
+		self.PubSub.AddSub(self.OnSendToConnectionPubSubBag, l...)
 	}
 
-	self.externalFullMarketDataInstruments = make([]string, len(incomingMessage.Data.Instruments), len(incomingMessage.Data.Instruments))
-	for i, s := range incomingMessage.Data.Instruments {
-		self.externalFullMarketDataInstruments[i] = s.Instrument
-	}
-	registeredSources = make([]string, len(incomingMessage.Data.Instruments), len(incomingMessage.Data.Instruments))
-	for i, instrument := range self.externalFullMarketDataInstruments {
-		registeredSources[i] = self.FullMarketDataHelper.RegisteredSource(instrument)
-	}
-	self.PubSub.AddSub(self.OnSendToConnectionPubSubBag, registeredSources...)
 	_ = self.FmdService.Send(incomingMessage)
 }
 
-func (self *reactor) handlePublishRxHandlerCounters(incomingMessage *model.PublishRxHandlerCounters) {
-	// not used. Swallowing message
-}
-
-func (self *reactor) handleEmptyQueue(incomingMessage *messages.EmptyQueue) {
-	// not used. Swallowing message
-}
-
-func (self *reactor) handlePingWrapper(incomingMessage *stream3.PingWrapper) {
-	// not used. Swallowing message
-}
-
-func (self *reactor) handlePongWrapper(incomingMessage *stream3.PongWrapper) {
-}
-
-func (self *reactor) OnUnknown(i interface{}) {
+func (self *reactor) OnUnknown(_ interface{}) {
 }
 
 //goland:noinspection GoSnakeCaseUsage
@@ -157,16 +151,12 @@ func NewConnectionReactor(
 			PubSub,
 			GoFunctionCounter,
 		),
-		MessageRouter:        messageRouter.NewMessageRouter(),
-		FullMarketDataHelper: FullMarketDataHelper,
-		FmdService:           FmdService,
+		MessageRouter:                     messageRouter.NewMessageRouter(),
+		FullMarketDataHelper:              FullMarketDataHelper,
+		FmdService:                        FmdService,
+		externalFullMarketDataInstruments: make(map[string]bool),
 	}
 	result.MessageRouter.RegisterUnknown(result.OnUnknown)
-	_ = result.MessageRouter.Add(result.handlePongWrapper)
-	_ = result.MessageRouter.Add(result.handlePingWrapper)
-	_ = result.MessageRouter.Add(result.handleEmptyQueue)
-	_ = result.MessageRouter.Add(result.handlePublishRxHandlerCounters)
-
 	_ = result.MessageRouter.Add(result.handleFullMarketData_InstrumentList_ResponseWrapper)
 	_ = result.MessageRouter.Add(result.handleFullMarketData_AddOrderInstructionWrapper)
 	_ = result.MessageRouter.Add(result.handleFullMarketData_ClearWrapper)

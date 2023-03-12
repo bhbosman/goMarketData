@@ -15,7 +15,7 @@ import (
 )
 
 type data struct {
-	MessageRouter                       *messageRouter.MessageRouter
+	MessageRouter                       messageRouter.IMessageRouter
 	fmdServiceHelper                    fullMarketDataHelper.IFullMarketDataHelper
 	pubSub                              *pubsub.PubSub
 	HttpClient                          *http.Client
@@ -29,7 +29,7 @@ type data struct {
 	availableInstrumentSheetInformation *availableInstrumentSheetInformation
 }
 
-func (self *data) Start(ctx context.Context) error {
+func (self *data) Start(context.Context) error {
 	SpreadsheetId, err := self.initialLoadOfSpreadSheet()
 	if err != nil {
 		return err
@@ -51,11 +51,11 @@ func (self *data) ShutDown() error {
 	return nil
 }
 
-func (self *data) handlePublishData(msg *publishData) {
+func (self *data) handlePublishData(*publishData) {
 	self.doPublish()
 }
 
-func (self *data) handleEmptyQueue(msg *messages.EmptyQueue) {
+func (self *data) handleEmptyQueue(*messages.EmptyQueue) {
 }
 
 //goland:noinspection GoSnakeCaseUsage
@@ -235,9 +235,9 @@ func newData(
 	}
 
 	// handlers
-	result.MessageRouter.Add(result.handleEmptyQueue)
-	result.MessageRouter.Add(result.handlePublishData)
-	result.MessageRouter.Add(result.handleFullMarketData_InstrumentList_Response)
+	_ = result.MessageRouter.Add(result.handleEmptyQueue)
+	_ = result.MessageRouter.Add(result.handlePublishData)
+	_ = result.MessageRouter.Add(result.handleFullMarketData_InstrumentList_Response)
 
 	// map sheet objects to each other
 	result.availableInstrumentsNamedRange.SetSheet(result.availableInstrumentSheetInformation)
