@@ -21,7 +21,7 @@ import (
 
 type reactor struct {
 	common.BaseConnectionReactor
-	MessageRouter                     *messageRouter.MessageRouter
+	MessageRouter                     messageRouter.IMessageRouter
 	FullMarketDataHelper              fullMarketDataHelper.IFullMarketDataHelper
 	FmdService                        fullMarketDataManagerService.IFmdManagerService
 	externalFullMarketDataInstruments []string
@@ -94,22 +94,22 @@ func (self *reactor) handleFullMarketData_InstrumentList_ResponseWrapper(incomin
 	_ = self.FmdService.Send(incomingMessage)
 }
 
-func (self *reactor) handlePublishRxHandlerCounters(incomingMessage *model.PublishRxHandlerCounters) {
+func (self *reactor) handlePublishRxHandlerCounters(*model.PublishRxHandlerCounters) {
 	// not used. Swallowing message
 }
 
-func (self *reactor) handleEmptyQueue(incomingMessage *messages.EmptyQueue) {
+func (self *reactor) handleEmptyQueue(*messages.EmptyQueue) {
 	// not used. Swallowing message
 }
 
-func (self *reactor) handlePingWrapper(incomingMessage *stream3.PingWrapper) {
+func (self *reactor) handlePingWrapper(*stream3.PingWrapper) {
 	// not used. Swallowing message
 }
 
-func (self *reactor) handlePongWrapper(incomingMessage *stream3.PongWrapper) {
+func (self *reactor) handlePongWrapper(*stream3.PongWrapper) {
 }
 
-func (self *reactor) OnUnknown(i interface{}) {
+func (self *reactor) OnUnknown(_ interface{}) {
 }
 
 //goland:noinspection GoSnakeCaseUsage
