@@ -230,7 +230,7 @@ func newData(
 		logger:                              logger,
 		namedRangeMap:                       make(map[string]iNamedRange),
 		availableInstrumentsNamedRange:      newStaticNamedRange("AvailableData"),
-		availableInstrumentSheetInformation: newAvailableInstrumentSheetInformation("Available Data", 1),
+		availableInstrumentSheetInformation: newAvailableInstrumentSheetInformation("Available data", 1),
 		sheetInformationMap:                 make(map[int64]iSheetInformation),
 	}
 
