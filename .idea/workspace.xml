@@ -14,7 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43036dc0-cc7b-424c-9fa9-2f6e3149ba73" name="Default Changelist" comment="refactor">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/incomingMarketData/reactor.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/incomingMarketData/reactor.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +189,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/internal/incomingMarketData/reactor.go</url>
-          <line>78</line>
+          <line>76</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>

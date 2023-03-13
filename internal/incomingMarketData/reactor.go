@@ -5,11 +5,9 @@ import (
 	stream2 "github.com/bhbosman/goCommonMarketData/fullMarketData/stream"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataHelper"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataManagerService"
-	stream3 "github.com/bhbosman/goMessages/pingpong/stream"
 	"github.com/bhbosman/gocommon/GoFunctionCounter"
 	"github.com/bhbosman/gocommon/Services/interfaces"
 	"github.com/bhbosman/gocommon/messageRouter"
-	"github.com/bhbosman/gocommon/messages"
 	"github.com/bhbosman/gocommon/model"
 	"github.com/bhbosman/gocomms/common"
 	"github.com/bhbosman/gocomms/intf"
@@ -108,21 +106,6 @@ func (self *reactor) handleFullMarketData_InstrumentList_ResponseWrapper(incomin
 	_ = self.FmdService.Send(incomingMessage)
 }
 
-func (self *reactor) handlePublishRxHandlerCounters(*model.PublishRxHandlerCounters) {
-	// not used. Swallowing message
-}
-
-func (self *reactor) handleEmptyQueue(*messages.EmptyQueue) {
-	// not used. Swallowing message
-}
-
-func (self *reactor) handlePingWrapper(*stream3.PingWrapper) {
-	// not used. Swallowing message
-}
-
-func (self *reactor) handlePongWrapper(*stream3.PongWrapper) {
-}
-
 func (self *reactor) OnUnknown(_ interface{}) {
 }
 
@@ -177,11 +160,6 @@ func NewConnectionReactor(
 		externalFullMarketDataInstruments: make(map[string]bool),
 	}
 	result.MessageRouter.RegisterUnknown(result.OnUnknown)
-	_ = result.MessageRouter.Add(result.handlePongWrapper)
-	_ = result.MessageRouter.Add(result.handlePingWrapper)
-	_ = result.MessageRouter.Add(result.handleEmptyQueue)
-	_ = result.MessageRouter.Add(result.handlePublishRxHandlerCounters)
-
 	_ = result.MessageRouter.Add(result.handleFullMarketData_InstrumentList_ResponseWrapper)
 	_ = result.MessageRouter.Add(result.handleFullMarketData_AddOrderInstructionWrapper)
 	_ = result.MessageRouter.Add(result.handleFullMarketData_ClearWrapper)
