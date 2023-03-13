@@ -84,13 +84,16 @@ func (self *reactor) handleFullMarketData_InstrumentList_ResponseWrapper(incomin
 			addInstruments[s.Instrument] = true
 		}
 	}
-	if len(removeInstruments) > 0 {
-		l := make([]string, 0, len(removeInstruments))
-		for s := range removeInstruments {
-			l = append(l, self.FullMarketDataHelper.RegisteredSource(s))
-			self.PubSub.Unsub(self.OnSendToConnectionPubSubBag, l...)
-		}
-	}
+
+	// we can not delete previously registered keys
+	//if len(removeInstruments) > 0 {
+	//	l := make([]string, 0, len(removeInstruments))
+	//	for s := range removeInstruments {
+	//		l = append(l, self.FullMarketDataHelper.RegisteredSource(s))
+	//		self.PubSub.Unsub(self.OnSendToConnectionPubSubBag, l...)
+	//	}
+	//}
+
 	if len(addInstruments) > 0 {
 		l := make([]string, 0, len(addInstruments))
 		for s := range addInstruments {
@@ -99,7 +102,8 @@ func (self *reactor) handleFullMarketData_InstrumentList_ResponseWrapper(incomin
 		}
 		self.PubSub.AddSub(self.OnSendToConnectionPubSubBag, l...)
 	}
-
+	//
+	incomingMessage.Data.FeedName = self.UniqueReference
 	_ = self.FmdService.Send(incomingMessage)
 }
 
