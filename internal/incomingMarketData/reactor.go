@@ -13,7 +13,6 @@ import (
 	"github.com/bhbosman/gocomms/intf"
 	"github.com/cskr/pubsub"
 	"github.com/reactivex/rxgo/v2"
-	"go.uber.org/multierr"
 	"go.uber.org/zap"
 )
 
@@ -26,8 +25,6 @@ type reactor struct {
 }
 
 func (self *reactor) Close() error {
-	var err error
-
 	fmdMessages := make([]interface{}, 0, len(self.externalFullMarketDataInstruments))
 	for key := range self.externalFullMarketDataInstruments {
 		fmdMessages = append(
@@ -38,10 +35,9 @@ func (self *reactor) Close() error {
 				Instrument: key,
 			},
 		)
-
 	}
 	self.FmdService.MultiSend(fmdMessages...)
-	return multierr.Append(err, self.BaseConnectionReactor.Close())
+	return self.BaseConnectionReactor.Close()
 }
 
 func (self *reactor) Open() error {
