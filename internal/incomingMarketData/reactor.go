@@ -27,6 +27,7 @@ type reactor struct {
 
 func (self *reactor) Close() error {
 	var err error
+
 	fmdMessages := make([]interface{}, 0, len(self.externalFullMarketDataInstruments))
 	for key := range self.externalFullMarketDataInstruments {
 		fmdMessages = append(
