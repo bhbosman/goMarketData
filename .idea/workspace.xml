@@ -14,6 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43036dc0-cc7b-424c-9fa9-2f6e3149ba73" name="Default Changelist" comment="refactor">
+      <change beforePath="$PROJECT_DIR$/../goCommonMarketData/fullMarketDataManagerService/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goCommonMarketData/fullMarketDataManagerService/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +31,7 @@
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../Program Files/Go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../goConnectionManager" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../goCommonMarketData" />
   </component>
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
@@ -77,7 +78,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;go&quot;
   }
 }</component>
-  <component name="RunManager" selected="Makefile Target.IConnectionManager (1)">
+  <component name="RunManager" selected="Go Build.goMarketData">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goMarketData" />
       <working_directory value="$PROJECT_DIR$" />
