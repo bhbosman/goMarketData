@@ -14,11 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43036dc0-cc7b-424c-9fa9-2f6e3149ba73" name="Default Changelist" comment="refactor">
-      <change beforePath="$PROJECT_DIR$/../goCommsNetDialer/netSingleDialApp.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goCommsNetDialer/netSingleDialApp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/goMarketData.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/goMarketData.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gocomms/common/netCommonApp.go" beforeDir="false" afterPath="$PROJECT_DIR$/../gocomms/common/netCommonApp.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +30,7 @@
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../Program Files/Go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../gocomms" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../goCommsNetDialer" />
   </component>
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
