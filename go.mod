@@ -23,6 +23,8 @@ require (
 	google.golang.org/protobuf v1.28.0
 )
 
+require github.com/bhbosman/goConn v0.0.0-20230317052122-2eec27fd9bc8 // indirect
+
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
 	github.com/bhbosman/goConnectionManager v0.0.0-20230312204225-183859f3cef5 // indirect
@@ -53,7 +55,7 @@ require (
 	go.opencensus.io v0.23.0 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/dig v1.16.1 // indirect
-	go.uber.org/multierr v1.6.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
 	golang.org/x/sys v0.0.0-20220624220833-87e55d714810 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
@@ -101,3 +103,5 @@ replace github.com/cskr/pubsub => ../pubsub
 replace github.com/bhbosman/goCommsNetListener => ../goCommsNetListener
 
 replace github.com/reactivex/rxgo/v2 => ../goRx
+
+replace github.com/bhbosman/goConn => ../goConn
