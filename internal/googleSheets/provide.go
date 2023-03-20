@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataHelper"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataManagerService"
+	"github.com/bhbosman/goConn"
 	service2 "github.com/bhbosman/goFxAppManager/service"
 	"github.com/bhbosman/gocommon/GoFunctionCounter"
 	"github.com/bhbosman/gocommon/Services/interfaces"
@@ -106,7 +107,7 @@ func Provide() fx.Option {
 						OnStart: func(ctx context.Context) error {
 							for k, clientDetailsInstance := range params.ClientDetailsMap {
 								err := params.FxManagerService.Add(k,
-									func() (messages.IApp, context.CancelFunc, error) {
+									func() (messages.IApp, goConn.ICancellationContext, error) {
 										onData := func() (IGoogleSheetsData, error) {
 											return newData(
 												params.FmdServiceHelper,
@@ -117,8 +118,12 @@ func Provide() fx.Option {
 												params.Logger,
 											)
 										}
+										namedLogger := params.Logger.Named(k)
+										ctx, cancelFunc := context.WithCancel(params.ApplicationContext)
+										cancellationContext := goConn.NewCancellationContext(k, cancelFunc, ctx, namedLogger, nil)
+
 										googleSheetService, err := newService(
-											params.ApplicationContext,
+											cancellationContext,
 											onData,
 											params.Logger,
 											params.PubSub,
@@ -130,7 +135,7 @@ func Provide() fx.Option {
 										if err != nil {
 											return nil, nil, err
 										}
-										return newAppWrapper(googleSheetService), func() {}, nil
+										return newAppWrapper(googleSheetService), cancellationContext, nil
 									},
 								)
 								if err != nil {

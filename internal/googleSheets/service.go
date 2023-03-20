@@ -5,6 +5,7 @@ import (
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataHelper"
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataManagerService"
 	"github.com/bhbosman/goCommsDefinitions"
+	"github.com/bhbosman/goConn"
 	"github.com/bhbosman/gocommon/ChannelHandler"
 	"github.com/bhbosman/gocommon/GoFunctionCounter"
 	"github.com/bhbosman/gocommon/Services/IFxService"
@@ -165,7 +166,7 @@ func (self service) ServiceName() string {
 }
 
 func newService(
-	parentContext context.Context,
+	cancellationContext goConn.ICancellationContext,
 	onData func() (IGoogleSheetsData, error),
 	logger *zap.Logger,
 	pubSub *pubsub.PubSub,
@@ -174,7 +175,7 @@ func newService(
 	FmdManagerService fullMarketDataManagerService.IFmdManagerService,
 	clientDetails clientDetails,
 ) (IGoogleSheetsService, error) {
-	localCtx, localCancelFunc := context.WithCancel(parentContext)
+	localCtx, localCancelFunc := context.WithCancel(cancellationContext.CancelContext())
 	return &service{
 		ctx:               localCtx,
 		cancelFunc:        localCancelFunc,
