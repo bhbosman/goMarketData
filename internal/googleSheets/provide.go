@@ -17,7 +17,6 @@ import (
 	"google.golang.org/api/drive/v3"
 	"google.golang.org/api/option"
 	"google.golang.org/api/sheets/v4"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -67,7 +66,7 @@ func Provide() fx.Option {
 					},
 				) (*oauth2.Config, error) {
 					homePath, _ := os.UserHomeDir()
-					b, err := ioutil.ReadFile(filepath.Join(homePath, ".MarketPrices", "credentials.json"))
+					b, err := os.ReadFile(filepath.Join(homePath, ".MarketPrices", "credentials.json"))
 					if err != nil {
 						params.Logger.Error("Unable to read client secret file", zap.Error(err))
 					}
@@ -120,8 +119,14 @@ func Provide() fx.Option {
 										}
 										namedLogger := params.Logger.Named(k)
 										ctx, cancelFunc := context.WithCancel(params.ApplicationContext)
-										cancellationContext := goConn.NewCancellationContext(k, cancelFunc, ctx, namedLogger, nil)
-
+										cancellationContext, err := goConn.NewCancellationContextNoCloser(
+											k,
+											cancelFunc,
+											ctx, namedLogger,
+										)
+										if err != nil {
+											return nil, nil, err
+										}
 										googleSheetService, err := newService(
 											cancellationContext,
 											onData,
@@ -169,7 +174,7 @@ func ProvideNamedObjects() fx.Option {
 				return nil
 			}
 			fn := path
-			option := fx.Provide(
+			provide := fx.Provide(
 				fx.Annotated{
 					Group: "MarketPricesClients",
 					Target: func(
@@ -201,7 +206,7 @@ func ProvideNamedObjects() fx.Option {
 					},
 				},
 			)
-			options = append(options, option)
+			options = append(options, provide)
 			return nil
 		},
 	)
