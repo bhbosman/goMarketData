@@ -62,6 +62,8 @@ github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kd
 github.com/benbjohnson/clock v1.1.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
 github.com/benbjohnson/clock v1.3.0 h1:ip6w0uFQkncKQ979AypyG0ER7mqUSBdKLOgAle/AT8A=
 github.com/benbjohnson/clock v1.3.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
+github.com/bhbosman/goCommonMarketData v0.0.0-20230328221032-1140368f4836 h1:byAWkxg0LvAL/gWplg6WJGf56E7CpV96GCWC4ZRFNdg=
+github.com/bhbosman/goCommonMarketData v0.0.0-20230328221032-1140368f4836/go.mod h1:pyfeinDT7XHh7cVETmIiVuj0NIioybK9tVYWZP3qo2A=
 github.com/bhbosman/goCommsDefinitions v0.0.0-20220801175552-c5aa68065af3/go.mod h1:37dZwNUF+PlfFbSnYP4tGXIELeZom5mRWfTBr9mNOPE=
 github.com/bhbosman/goCommsDefinitions v0.0.0-20230308211643-24fe88b2378e/go.mod h1:tkd0ohtBBlomjgZrSj1K7YHT6zb0td0X6v6Tv/kn/wA=
 github.com/bhbosman/goCommsDefinitions v0.0.0-20230320101758-971a50fdbf8c h1:Ky8YIMW9ns/H0JnE/V1Xflib/texmWIoCSYNMSsf25Q=
