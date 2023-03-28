@@ -10,7 +10,7 @@ require (
 	github.com/bhbosman/goCommsStacks v0.0.0-20230302204344-9276aae2cb77
 	github.com/bhbosman/goFxApp v0.0.0-20230302094801-5074560d188e
 	github.com/bhbosman/goFxAppManager v0.0.0-20230320053418-125763bdf8d5
-	github.com/bhbosman/gocommon v0.0.0-20230328150634-566a0f916878
+	github.com/bhbosman/gocommon v0.0.0-20230328205958-d21444a729d1
 	github.com/bhbosman/gocomms v0.0.0-20230307212550-0918a992672c
 	github.com/bhbosman/goprotoextra v0.0.2
 	github.com/cskr/pubsub v1.0.2
@@ -28,7 +28,7 @@ require github.com/bhbosman/goConn v0.0.0-20230327111455-7a39299fb0aa
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
 	github.com/bhbosman/goConnectionManager v0.0.0-20230328152946-8854ec40e34b // indirect
-	github.com/bhbosman/goMessages v0.0.0-20230302063433-258339efe599 // indirect
+	github.com/bhbosman/goMessages v0.0.0-20230328145403-abd9357e258c // indirect
 	github.com/bhbosman/goUi v0.0.0-20230328181044-49e31970d158 // indirect
 	github.com/bhbosman/goerrors v0.0.0-20220623084908-4d7bbcd178cf // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20230308173223-e8144f25444c // indirect
