@@ -66,12 +66,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace (
-	github.com/bhbosman/goMessages => ../goMessages
-	//github.com/bhbosman/gocommon => ../gocommon
-	github.com/bhbosman/gocomms => ../gocomms
-)
-
 replace github.com/gdamore/tcell/v2 => github.com/bhbosman/tcell/v2 v2.5.2-0.20220624055704-f9a9454fab5b
 
 replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.20230302060806-d02c40b7514e
@@ -82,7 +76,7 @@ replace github.com/rivo/tview => github.com/bhbosman/tview v0.0.0-20230310100135
 
 //replace github.com/bhbosman/goCommsStacks => ../goCommsStacks
 
-replace github.com/bhbosman/goCommsNetDialer => ../goCommsNetDialer
+//replace github.com/bhbosman/goCommsNetDialer => ../goCommsNetDialer
 
 //replace github.com/bhbosman/goCommsDefinitions => ../goCommsDefinitions
 
