@@ -122,7 +122,8 @@ func Provide() fx.Option {
 										cancellationContext, err := goConn.NewCancellationContextNoCloser(
 											k,
 											cancelFunc,
-											ctx, namedLogger,
+											ctx,
+											namedLogger,
 										)
 										if err != nil {
 											return nil, nil, err

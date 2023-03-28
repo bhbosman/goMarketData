@@ -10,7 +10,7 @@ require (
 	github.com/bhbosman/goCommsStacks v0.0.0-20230302204344-9276aae2cb77
 	github.com/bhbosman/goFxApp v0.0.0-20230302094801-5074560d188e
 	github.com/bhbosman/goFxAppManager v0.0.0-20230320053418-125763bdf8d5
-	github.com/bhbosman/gocommon v0.0.0-20230328140834-3b6f0ea2faaa
+	github.com/bhbosman/gocommon v0.0.0-20230328150634-566a0f916878
 	github.com/bhbosman/gocomms v0.0.0-20230307212550-0918a992672c
 	github.com/bhbosman/goprotoextra v0.0.2
 	github.com/cskr/pubsub v1.0.2
@@ -27,9 +27,9 @@ require github.com/bhbosman/goConn v0.0.0-20230327111455-7a39299fb0aa
 
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
-	github.com/bhbosman/goConnectionManager v0.0.0-20230328152128-966e33ba52f4 // indirect
+	github.com/bhbosman/goConnectionManager v0.0.0-20230328152946-8854ec40e34b // indirect
 	github.com/bhbosman/goMessages v0.0.0-20230302063433-258339efe599 // indirect
-	github.com/bhbosman/goUi v0.0.0-20230327111003-b80e10f7c669 // indirect
+	github.com/bhbosman/goUi v0.0.0-20230328181044-49e31970d158 // indirect
 	github.com/bhbosman/goerrors v0.0.0-20220623084908-4d7bbcd178cf // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20230308173223-e8144f25444c // indirect
 	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
@@ -68,13 +68,17 @@ require (
 
 replace (
 	github.com/bhbosman/goMessages => ../goMessages
-	github.com/bhbosman/gocommon => ../gocommon
+	//github.com/bhbosman/gocommon => ../gocommon
 	github.com/bhbosman/gocomms => ../gocomms
 )
 
-replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.20220617134815-f277ff266f47
-
 replace github.com/gdamore/tcell/v2 => github.com/bhbosman/tcell/v2 v2.5.2-0.20220624055704-f9a9454fab5b
+
+replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.20230302060806-d02c40b7514e
+
+replace github.com/cskr/pubsub => github.com/bhbosman/pubsub v1.0.3-0.20220802200819-029949e8a8af
+
+replace github.com/rivo/tview => github.com/bhbosman/tview v0.0.0-20230310100135-f8b257a85d36
 
 replace github.com/bhbosman/goCommsStacks => ../goCommsStacks
 
@@ -84,7 +88,7 @@ replace github.com/bhbosman/goCommsDefinitions => ../goCommsDefinitions
 
 replace github.com/bhbosman/goFxApp => ../goFxApp
 
-replace github.com/bhbosman/goUi => ../goUi
+//replace github.com/bhbosman/goUi => ../goUi
 
 replace github.com/bhbosman/goerrors => ../goerrors
 
@@ -92,13 +96,9 @@ replace github.com/bhbosman/goFxAppManager => ../goFxAppManager
 
 replace github.com/bhbosman/goConnectionManager => ../goConnectionManager
 
-replace github.com/rivo/tview => ../tview
-
-//replace github.com/bhbosman/goprotoextra => ../goprotoextra
+replace github.com/bhbosman/goprotoextra => ../goprotoextra
 
 replace github.com/bhbosman/goCommonMarketData => ../goCommonMarketData
-
-replace github.com/cskr/pubsub => ../pubsub
 
 replace github.com/bhbosman/goCommsNetListener => ../goCommsNetListener
 
