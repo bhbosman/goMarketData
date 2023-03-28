@@ -11,7 +11,7 @@ require (
 	github.com/bhbosman/goFxApp v0.0.0-20230302094801-5074560d188e
 	github.com/bhbosman/goFxAppManager v0.0.0-20230328220050-a5b50e43977e
 	github.com/bhbosman/gocommon v0.0.0-20230328220050-dafaab862dd2
-	github.com/bhbosman/gocomms v0.0.0-20230307212550-0918a992672c
+	github.com/bhbosman/gocomms v0.0.0-20230328221033-4231cc0340d0
 	github.com/bhbosman/goprotoextra v0.0.2
 	github.com/cskr/pubsub v1.0.2
 	github.com/reactivex/rxgo/v2 v2.5.0
