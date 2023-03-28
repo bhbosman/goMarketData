@@ -101,13 +101,11 @@ replace github.com/bhbosman/goFxAppManager => ../goFxAppManager
 
 replace github.com/bhbosman/goConnectionManager => ../goConnectionManager
 
-replace github.com/rivo/tview => ../tview
 
 replace github.com/bhbosman/goprotoextra => ../goprotoextra
 
 replace github.com/bhbosman/goCommonMarketData => ../goCommonMarketData
 
-replace github.com/cskr/pubsub => ../pubsub
 
 replace github.com/bhbosman/goCommsNetListener => ../goCommsNetListener
 
