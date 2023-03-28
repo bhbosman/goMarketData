@@ -74,28 +74,3 @@ replace github.com/cskr/pubsub => github.com/bhbosman/pubsub v1.0.3-0.2022080220
 
 replace github.com/rivo/tview => github.com/bhbosman/tview v0.0.0-20230310100135-f8b257a85d36
 
-//replace github.com/bhbosman/goCommsStacks => ../goCommsStacks
-
-//replace github.com/bhbosman/goCommsNetDialer => ../goCommsNetDialer
-
-//replace github.com/bhbosman/goCommsDefinitions => ../goCommsDefinitions
-
-//replace github.com/bhbosman/goFxApp => ../goFxApp
-
-//replace github.com/bhbosman/goUi => ../goUi
-
-//replace github.com/bhbosman/goerrors => ../goerrors
-
-//replace github.com/bhbosman/goFxAppManager => ../goFxAppManager
-
-//replace github.com/bhbosman/goConnectionManager => ../goConnectionManager
-
-//replace github.com/bhbosman/goprotoextra => ../goprotoextra
-
-//replace github.com/bhbosman/goCommonMarketData => ../goCommonMarketData
-
-//replace github.com/bhbosman/goCommsNetListener => ../goCommsNetListener
-
-//replace github.com/reactivex/rxgo/v2 => ../goRx
-
-//replace github.com/bhbosman/goConn => ../goConn
