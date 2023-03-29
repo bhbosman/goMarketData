@@ -13,8 +13,8 @@ import (
 	"github.com/bhbosman/goCommsStacks/protoBuf"
 	"github.com/bhbosman/goCommsStacks/tlsStack"
 	"github.com/bhbosman/goCommsStacks/topStack"
+	"github.com/bhbosman/gocommon"
 	"github.com/bhbosman/gocommon/fx/PubSub"
-	"github.com/bhbosman/gocommon/messages"
 	common2 "github.com/bhbosman/gocomms/common"
 	"github.com/cskr/pubsub"
 	"go.uber.org/fx"
@@ -40,7 +40,7 @@ func CompressedListener(
 					FullMarketDataHelper fullMarketDataHelper.IFullMarketDataHelper
 					FmdService           fullMarketDataManagerService.IFmdManagerService
 				},
-			) messages.CreateAppCallback {
+			) gocommon.CreateAppCallback {
 				f := goCommsNetListener.NewNetListenApp(
 					CompressedListenerConnection,
 					CompressedListenerConnection,

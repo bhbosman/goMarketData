@@ -6,8 +6,8 @@ import (
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataManagerService"
 	"github.com/bhbosman/goConn"
 	service2 "github.com/bhbosman/goFxAppManager/service"
+	"github.com/bhbosman/gocommon"
 	"github.com/bhbosman/gocommon/GoFunctionCounter"
-	"github.com/bhbosman/gocommon/messages"
 	"github.com/bhbosman/gocommon/services/interfaces"
 	"github.com/cskr/pubsub"
 	"go.uber.org/fx"
@@ -106,7 +106,7 @@ func Provide() fx.Option {
 						OnStart: func(ctx context.Context) error {
 							for k, clientDetailsInstance := range params.ClientDetailsMap {
 								err := params.FxManagerService.Add(k,
-									func() (messages.IApp, goConn.ICancellationContext, error) {
+									func() (gocommon.IApp, gocommon.ICancellationContext, error) {
 										onData := func() (IGoogleSheetsData, error) {
 											return newData(
 												params.FmdServiceHelper,

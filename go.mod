@@ -5,13 +5,14 @@ go 1.18
 require (
 	github.com/bhbosman/goCommonMarketData v0.0.0-20230328221032-1140368f4836
 	github.com/bhbosman/goCommsDefinitions v0.0.0-20230320101758-971a50fdbf8c
-	github.com/bhbosman/goCommsNetDialer v0.0.0-20230328221032-2077fce8d8d6
-	github.com/bhbosman/goCommsNetListener v0.0.0-20230328221032-95cc426246fe
+	github.com/bhbosman/goCommsNetDialer v0.0.0-20230329122812-99ee6ff4a6e3
+	github.com/bhbosman/goCommsNetListener v0.0.0-20230329104212-9f1b0eafaa6b
 	github.com/bhbosman/goCommsStacks v0.0.0-20230328221032-cd6c6063e9ef
-	github.com/bhbosman/goFxApp v0.0.0-20230328222821-d6fbe28ebdf1
-	github.com/bhbosman/goFxAppManager v0.0.0-20230328221825-d57a6eef05c0
+	github.com/bhbosman/goConn v0.0.0-20230328145648-e6bab0984275
+	github.com/bhbosman/goFxApp v0.0.0-20230329104220-7e2a5eb93c57
+	github.com/bhbosman/goFxAppManager v0.0.0-20230329105958-8874cb25c628
 	github.com/bhbosman/gocommon v0.0.0-20230329101749-40db0f52d859
-	github.com/bhbosman/gocomms v0.0.0-20230328221033-4231cc0340d0
+	github.com/bhbosman/gocomms v0.0.0-20230329110556-946ebc6ff5f4
 	github.com/bhbosman/goprotoextra v0.0.2
 	github.com/cskr/pubsub v1.0.2
 	github.com/reactivex/rxgo/v2 v2.5.0
@@ -22,8 +23,6 @@ require (
 	google.golang.org/api v0.90.0
 	google.golang.org/protobuf v1.28.0
 )
-
-
 
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
@@ -73,4 +72,3 @@ replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.2023030206
 replace github.com/cskr/pubsub => github.com/bhbosman/pubsub v1.0.3-0.20220802200819-029949e8a8af
 
 replace github.com/rivo/tview => github.com/bhbosman/tview v0.0.0-20230310100135-f8b257a85d36
-
