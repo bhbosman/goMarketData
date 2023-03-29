@@ -74,8 +74,8 @@ github.com/bhbosman/goCommsNetListener v0.0.0-20230328221032-95cc426246fe h1:wDp
 github.com/bhbosman/goCommsNetListener v0.0.0-20230328221032-95cc426246fe/go.mod h1:tbDAhT+IWFDNjE8EvOLsfI1+Su7Y/2cxW+GHt0u6w8k=
 github.com/bhbosman/goCommsStacks v0.0.0-20230328221032-cd6c6063e9ef h1:Wbs2gTNAxzdYydA6elY3BoKuFch0bMPemg8mIbIi2pk=
 github.com/bhbosman/goCommsStacks v0.0.0-20230328221032-cd6c6063e9ef/go.mod h1:BuvGgO61dZpTSX1NpwOTafwA+evIeZvvS9ccNzpbIxQ=
-github.com/bhbosman/goConn v0.0.0-20230328145648-e6bab0984275 h1:mb8udNg6G36PPdwH7R2XM1cdIo+cy7l59wMURJPXrSQ=
-github.com/bhbosman/goConn v0.0.0-20230328145648-e6bab0984275/go.mod h1:IqnusjHk+667VfU4wKbfTTf0RDInttgjpkuN02P0C4U=
+
+
 github.com/bhbosman/goConnectionManager v0.0.0-20230328221032-2e48eb2721d0 h1:JgFkHqqe4A053Gi7Zkcu0B6Hs8Zj1pwKjed2MXhwmaY=
 github.com/bhbosman/goConnectionManager v0.0.0-20230328221032-2e48eb2721d0/go.mod h1:Gm7Jj1TTD18FvkICm3qMgenc0DLrt7RBxnU5jcN5qb8=
 github.com/bhbosman/goFxApp v0.0.0-20230328222821-d6fbe28ebdf1 h1:RNbFFMuyX+KiMUIppVXszc3gKXp2w1F7H/WidKhqsAU=

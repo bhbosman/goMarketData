@@ -23,7 +23,7 @@ require (
 	google.golang.org/protobuf v1.28.0
 )
 
-require github.com/bhbosman/goConn v0.0.0-20230328145648-e6bab0984275
+
 
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
