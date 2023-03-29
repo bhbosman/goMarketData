@@ -10,7 +10,7 @@ require (
 	github.com/bhbosman/goCommsStacks v0.0.0-20230328221032-cd6c6063e9ef
 	github.com/bhbosman/goFxApp v0.0.0-20230328222821-d6fbe28ebdf1
 	github.com/bhbosman/goFxAppManager v0.0.0-20230328221825-d57a6eef05c0
-	github.com/bhbosman/gocommon v0.0.0-20230328220050-dafaab862dd2
+	github.com/bhbosman/gocommon v0.0.0-20230329101749-40db0f52d859
 	github.com/bhbosman/gocomms v0.0.0-20230328221033-4231cc0340d0
 	github.com/bhbosman/goprotoextra v0.0.2
 	github.com/cskr/pubsub v1.0.2
