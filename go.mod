@@ -3,8 +3,14 @@ module github.com/bhbosman/goMarketData
 go 1.18
 
 require (
-	github.com/bhbosman/goCommsDefinitions v0.0.0-20230320101758-971a50fdbf8c
+	github.com/bhbosman/goCommonMarketData v0.0.0-20230329104211-85489143d780
+	github.com/bhbosman/goCommsDefinitions v0.0.0-20230329100608-a6a24c060ad8
+	github.com/bhbosman/goCommsNetDialer v0.0.0-20230329122812-99ee6ff4a6e3
+	github.com/bhbosman/goCommsNetListener v0.0.0-20230329104212-9f1b0eafaa6b
+	github.com/bhbosman/goCommsStacks v0.0.0-20230329130747-61861032aee9
 	github.com/bhbosman/goConn v0.0.0-20230328145648-e6bab0984275
+	github.com/bhbosman/goFxApp v0.0.0-20230329130129-3545eed76770
+	github.com/bhbosman/goFxAppManager v0.0.0-20230329105958-8874cb25c628
 	github.com/bhbosman/gocommon v0.0.0-20230329101749-40db0f52d859
 	github.com/bhbosman/gocomms v0.0.0-20230329110556-946ebc6ff5f4
 	github.com/bhbosman/goprotoextra v0.0.2
@@ -12,7 +18,7 @@ require (
 	github.com/reactivex/rxgo/v2 v2.5.0
 	go.uber.org/fx v1.19.2
 	go.uber.org/zap v1.24.0
-	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e
+	golang.org/x/net v0.5.0
 	golang.org/x/oauth2 v0.0.0-20220622183110-fd043fe589d2
 	google.golang.org/api v0.90.0
 	google.golang.org/protobuf v1.28.0
@@ -20,8 +26,9 @@ require (
 
 require (
 	cloud.google.com/go/compute v1.7.0 // indirect
-	github.com/bhbosman/goConnectionManager v0.0.0-20230328221032-2e48eb2721d0 // indirect
-	github.com/bhbosman/goMessages v0.0.0-20230328221033-d00082868706 // indirect
+	github.com/bhbosman/goConnectionManager v0.0.0-20230329104211-b2d06385b410 // indirect
+	github.com/bhbosman/goMessages v0.0.0-20230329104216-4906969c1e61 // indirect
+	github.com/bhbosman/goUi v0.0.0-20230328220052-834528d68f6d // indirect
 	github.com/bhbosman/goerrors v0.0.0-20220623084908-4d7bbcd178cf // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20230308173223-e8144f25444c // indirect
 	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
@@ -49,9 +56,9 @@ require (
 	go.uber.org/dig v1.16.1 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
-	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
-	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
-	golang.org/x/text v0.3.8 // indirect
+	golang.org/x/sys v0.4.0 // indirect
+	golang.org/x/term v0.4.0 // indirect
+	golang.org/x/text v0.6.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220624142145-8cd45d7dbd1f // indirect
 	google.golang.org/grpc v1.47.0 // indirect
