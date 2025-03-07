@@ -7,7 +7,6 @@ import (
 	"github.com/bhbosman/goCommonMarketData/fullMarketDataManagerViewer"
 	"github.com/bhbosman/goCommonMarketData/instrumentReference"
 	"github.com/bhbosman/goFxApp"
-	"github.com/bhbosman/goMarketData/internal/googleSheets"
 	"github.com/bhbosman/goMarketData/internal/incomingMarketData"
 	"github.com/bhbosman/goMarketData/internal/listener"
 	app2 "github.com/bhbosman/gocommon/Providers"
@@ -26,7 +25,7 @@ func main() {
 		fullMarketDataManagerService.Provide(true),
 		fullMarketDataHelper.Provide(),
 		instrumentReference.Provide(),
-		googleSheets.Provide(),
+		//googleSheets.Provide(),
 		listener.CompressedListener(1024, false, nil, u),
 		app2.RegisterRunTimeManager(),
 		incomingMarketData.ProvideLunoMarketDataDialer(1, "tcp4://127.0.0.1:3001"),

@@ -1,67 +1,69 @@
 module github.com/bhbosman/goMarketData
 
-go 1.18
+go 1.23.0
+
+toolchain go1.24.0
 
 require (
-	github.com/bhbosman/goCommonMarketData v0.0.0-20230329104211-85489143d780
-	github.com/bhbosman/goCommsDefinitions v0.0.0-20230329100608-a6a24c060ad8
-	github.com/bhbosman/goCommsNetDialer v0.0.0-20230329122812-99ee6ff4a6e3
-	github.com/bhbosman/goCommsNetListener v0.0.0-20230329104212-9f1b0eafaa6b
-	github.com/bhbosman/goCommsStacks v0.0.0-20230329130747-61861032aee9
-	github.com/bhbosman/goConn v0.0.0-20230328145648-e6bab0984275
-	github.com/bhbosman/goFxApp v0.0.0-20230329130129-3545eed76770
-	github.com/bhbosman/goFxAppManager v0.0.0-20230329105958-8874cb25c628
-	github.com/bhbosman/gocommon v0.0.0-20230329101749-40db0f52d859
-	github.com/bhbosman/gocomms v0.0.0-20230329110556-946ebc6ff5f4
+	github.com/bhbosman/goCommonMarketData v0.0.0-20230730212407-5a7831da9c11
+	github.com/bhbosman/goCommsDefinitions v0.0.0-20250307125227-bfc368fdddf9
+	github.com/bhbosman/goCommsNetDialer v0.0.0-20250307150712-206b023d3816
+	github.com/bhbosman/goCommsNetListener v0.0.0-20250307153216-6206fd2748ea
+	github.com/bhbosman/goCommsStacks v0.0.0-20231011182118-47d6d38b38e4
+	github.com/bhbosman/goConn v0.0.0-20250307232512-5c59bbebe521
+	github.com/bhbosman/goFxApp v0.0.0-20250307153150-937959817ddb
+	github.com/bhbosman/goFxAppManager v0.0.0-20250307145515-bda0fa4d9959
+	github.com/bhbosman/gocommon v0.0.0-20250307145810-dee67af89371
+	github.com/bhbosman/gocomms v0.0.0-20230730212408-04ba72ddb372
 	github.com/bhbosman/goprotoextra v0.0.2
 	github.com/cskr/pubsub v1.0.2
 	github.com/reactivex/rxgo/v2 v2.5.0
-	go.uber.org/fx v1.19.2
-	go.uber.org/zap v1.24.0
-	golang.org/x/net v0.5.0
-	golang.org/x/oauth2 v0.0.0-20220622183110-fd043fe589d2
-	google.golang.org/api v0.90.0
-	google.golang.org/protobuf v1.28.0
+	go.uber.org/fx v1.23.0
+	go.uber.org/zap v1.27.0
+	golang.org/x/net v0.37.0
+	golang.org/x/oauth2 v0.28.0
+	google.golang.org/api v0.224.0
+	google.golang.org/protobuf v1.36.5
 )
 
 require (
-	cloud.google.com/go/compute v1.7.0 // indirect
-	github.com/bhbosman/goConnectionManager v0.0.0-20230329104211-b2d06385b410 // indirect
-	github.com/bhbosman/goMessages v0.0.0-20230329104216-4906969c1e61 // indirect
-	github.com/bhbosman/goUi v0.0.0-20230328220052-834528d68f6d // indirect
-	github.com/bhbosman/goerrors v0.0.0-20220623084908-4d7bbcd178cf // indirect
-	github.com/bhbosman/gomessageblock v0.0.0-20230308173223-e8144f25444c // indirect
-	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
+	cloud.google.com/go/compute v1.34.0 // indirect
+	github.com/bhbosman/goConnectionManager v0.0.0-20250307195323-c97481f7bf87 // indirect
+	github.com/bhbosman/goMessages v0.0.0-20250307224348-83ddb4c19467 // indirect
+	github.com/bhbosman/goUi v0.0.0-20250307150712-d06325af4877 // indirect
+	github.com/bhbosman/goerrors v0.0.0-20250307194237-312d070c8e38 // indirect
+	github.com/bhbosman/gomessageblock v0.0.0-20250307141417-ab783e8e2eba // indirect
+	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
-	github.com/gdamore/encoding v1.0.0 // indirect
-	github.com/gdamore/tcell/v2 v2.5.1 // indirect
+	github.com/gdamore/encoding v1.0.1 // indirect
+	github.com/gdamore/tcell/v2 v2.8.1 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/mock v1.6.0 // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/google/uuid v1.3.0 // indirect
-	github.com/googleapis/enterprise-certificate-proxy v0.1.0 // indirect
-	github.com/googleapis/gax-go/v2 v2.4.0 // indirect
-	github.com/icza/gox v0.0.0-20220321141217-e2d488ab2fbc // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
+	github.com/google/uuid v1.6.0 // indirect
+	github.com/googleapis/enterprise-certificate-proxy v0.3.5 // indirect
+	github.com/googleapis/gax-go/v2 v2.14.1 // indirect
+	github.com/icza/gox v0.2.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
-	github.com/mattn/go-runewidth v0.0.13 // indirect
+	github.com/mattn/go-runewidth v0.0.16 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/rivo/tview v0.0.0-20220709181631-73bf2902b59a // indirect
-	github.com/rivo/uniseg v0.2.0 // indirect
-	github.com/stretchr/objx v0.4.0 // indirect
-	github.com/stretchr/testify v1.8.0 // indirect
-	github.com/teivah/onecontext v0.0.0-20200513185103-40f981bfd775 // indirect
+	github.com/rivo/tview v0.0.0-20241227133733-17b7edb88c57 // indirect
+	github.com/rivo/uniseg v0.4.7 // indirect
+	github.com/stretchr/objx v0.5.2 // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
+	github.com/teivah/onecontext v1.3.0 // indirect
 	go.opencensus.io v0.23.0 // indirect
-	go.uber.org/atomic v1.7.0 // indirect
-	go.uber.org/dig v1.16.1 // indirect
-	go.uber.org/multierr v1.10.0 // indirect
-	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
-	golang.org/x/sys v0.4.0 // indirect
-	golang.org/x/term v0.4.0 // indirect
-	golang.org/x/text v0.6.0 // indirect
+	go.uber.org/atomic v1.11.0 // indirect
+	go.uber.org/dig v1.18.1 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
+	golang.org/x/sync v0.12.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/term v0.30.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20220624142145-8cd45d7dbd1f // indirect
-	google.golang.org/grpc v1.47.0 // indirect
+	google.golang.org/genproto v0.0.0-20250122153221-138b5a5a4fd4 // indirect
+	google.golang.org/grpc v1.70.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
