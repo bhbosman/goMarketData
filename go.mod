@@ -1,8 +1,6 @@
 module github.com/bhbosman/goMarketData
 
-go 1.23.0
-
-toolchain go1.24.0
+go 1.24.0
 
 require (
 	github.com/bhbosman/goCommonMarketData v0.0.0-20250308054451-6dade8c5c3f9
@@ -77,7 +75,7 @@ require (
 
 replace github.com/gdamore/tcell/v2 => github.com/bhbosman/tcell/v2 v2.5.2-0.20220624055704-f9a9454fab5b
 
-replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.20230302060806-d02c40b7514e
+replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.20250308071159-4cf72f668c72
 
 replace github.com/cskr/pubsub => github.com/bhbosman/pubsub v1.0.3-0.20220802200819-029949e8a8af
 
