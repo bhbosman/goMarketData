@@ -5,7 +5,7 @@ go 1.24.0
 require (
 	github.com/bhbosman/goCommonMarketData v0.0.0-20250308133807-dfa6df88bdb4
 	github.com/bhbosman/goCommsDefinitions v0.0.0-20250308074916-3e7c0d32b971
-	github.com/bhbosman/goCommsNetDialer v0.0.0-20250308072116-e542f85eddcc
+	github.com/bhbosman/goCommsNetDialer v0.0.0-20250308133838-fcd6077403df
 	github.com/bhbosman/goCommsNetListener v0.0.0-20250308122653-28d9e53d4343
 	github.com/bhbosman/goCommsStacks v0.0.0-20250308122653-67040ed90c18
 	github.com/bhbosman/goConn v0.0.0-20250308073057-2a0933b3cb38
@@ -29,8 +29,8 @@ require (
 	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
 	github.com/bhbosman/goConnectionManager v0.0.0-20250308122653-53a96fe357f2 // indirect
-	github.com/bhbosman/goMessages v0.0.0-20250308122654-32a88d6d1169 // indirect
-	github.com/bhbosman/goUi v0.0.0-20250308124821-836921ea8a1e // indirect
+	github.com/bhbosman/goMessages v0.0.0-20250308134004-88a683243000 // indirect
+	github.com/bhbosman/goUi v0.0.0-20250308132651-2a5e82ef72b0 // indirect
 	github.com/bhbosman/goerrors v0.0.0-20250307194237-312d070c8e38 // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20250308073733-0b3daca12e3a // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
