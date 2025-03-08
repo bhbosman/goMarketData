@@ -77,6 +77,6 @@ replace github.com/gdamore/tcell/v2 => github.com/bhbosman/tcell/v2 v2.5.2-0.202
 
 replace github.com/golang/mock => github.com/bhbosman/gomock v1.6.1-0.20250308071159-4cf72f668c72
 
-replace github.com/cskr/pubsub => github.com/bhbosman/pubsub v1.0.3-0.20250308162024-50f212a35484
+replace github.com/cskr/pubsub => github.com/bhbosman/pubsub v1.0.3-0.20250308211253-e47ee222bb15
 
 replace github.com/rivo/tview => github.com/bhbosman/tview v0.0.0-20250308051327-a656c1bc9cfa
