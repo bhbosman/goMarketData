@@ -3,11 +3,11 @@ module github.com/bhbosman/goMarketData
 go 1.24.0
 
 require (
-	github.com/bhbosman/goCommonMarketData v0.0.0-20250308192059-0d9dd67dc2fb
+	github.com/bhbosman/goCommonMarketData v0.0.0-20250308201059-06af23865f1c
 	github.com/bhbosman/goCommsDefinitions v0.0.0-20250308144130-64993b60920c
 	github.com/bhbosman/goCommsNetDialer v0.0.0-20250308194845-d79c1c88c66f
 	github.com/bhbosman/goCommsNetListener v0.0.0-20250308195846-03f74299dec9
-	github.com/bhbosman/goCommsStacks v0.0.0-20250308192125-9f32e0135afc
+	github.com/bhbosman/goCommsStacks v0.0.0-20250308195825-d8c70d3767da
 	github.com/bhbosman/goConn v0.0.0-20250308073057-2a0933b3cb38
 	github.com/bhbosman/goFxApp v0.0.0-20250308162224-38e18cab1c9b
 	github.com/bhbosman/goFxAppManager v0.0.0-20250308192215-e35e337e2f4e
