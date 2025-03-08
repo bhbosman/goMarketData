@@ -29,8 +29,8 @@ require (
 	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
 	github.com/bhbosman/goConnectionManager v0.0.0-20250308054322-587c786bedb0 // indirect
-	github.com/bhbosman/goMessages v0.0.0-20250308052839-b11fc966f96a // indirect
-	github.com/bhbosman/goUi v0.0.0-20250308064519-26f29e163722 // indirect
+	github.com/bhbosman/goMessages v0.0.0-20250308063841-56e83c4ed9eb // indirect
+	github.com/bhbosman/goUi v0.0.0-20250308071736-0cc76a4d2dbf // indirect
 	github.com/bhbosman/goerrors v0.0.0-20250307194237-312d070c8e38 // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20250307141417-ab783e8e2eba // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
