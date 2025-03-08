@@ -7,7 +7,7 @@ toolchain go1.24.0
 require (
 	github.com/bhbosman/goCommonMarketData v0.0.0-20230730212407-5a7831da9c11
 	github.com/bhbosman/goCommsDefinitions v0.0.0-20250307125227-bfc368fdddf9
-	github.com/bhbosman/goCommsNetDialer v0.0.0-20250307150712-206b023d3816
+	github.com/bhbosman/goCommsNetDialer v0.0.0-20250307233555-6c2dfa80f01b
 	github.com/bhbosman/goCommsNetListener v0.0.0-20250307153216-6206fd2748ea
 	github.com/bhbosman/goCommsStacks v0.0.0-20231011182118-47d6d38b38e4
 	github.com/bhbosman/goConn v0.0.0-20250307232512-5c59bbebe521
@@ -28,7 +28,7 @@ require (
 
 require (
 	cloud.google.com/go/compute v1.34.0 // indirect
-	github.com/bhbosman/goConnectionManager v0.0.0-20250307195323-c97481f7bf87 // indirect
+	github.com/bhbosman/goConnectionManager v0.0.0-20250307224538-a79ceb218fd0 // indirect
 	github.com/bhbosman/goMessages v0.0.0-20250307224348-83ddb4c19467 // indirect
 	github.com/bhbosman/goUi v0.0.0-20250307150712-d06325af4877 // indirect
 	github.com/bhbosman/goerrors v0.0.0-20250307194237-312d070c8e38 // indirect
