@@ -1,9 +1,14 @@
-# Kraken Market Data Application
+# GoMarketData Application
 
 
-This is a CLI style application that uses golang to connect to a webservice to extract crypto market data
+This is a CLI style application that uses golang to connect other application to collate their data into one application to view
 
-This application connects to the Kraken Website (https://www.kraken.com/) and it can retrieve Market Data from their website, via WebSocket interface.
+This application connects to:
+1. goLuno Application (https://github.com/bhbosman/goLuno), 
+2. kraken-stream (https://github.com/bhbosman/gokraken),
+
+ 
+via a TCP connection. 
 
 # Pre-requisites
 1. Golang version 1.24
