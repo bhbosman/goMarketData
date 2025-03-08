@@ -10,8 +10,8 @@ require (
 	github.com/bhbosman/goCommsNetDialer v0.0.0-20250307233555-6c2dfa80f01b
 	github.com/bhbosman/goCommsNetListener v0.0.0-20250307153216-6206fd2748ea
 	github.com/bhbosman/goCommsStacks v0.0.0-20231011182118-47d6d38b38e4
-	github.com/bhbosman/goConn v0.0.0-20250307232512-5c59bbebe521
-	github.com/bhbosman/goFxApp v0.0.0-20250307153150-937959817ddb
+	github.com/bhbosman/goConn v0.0.0-20250307235008-177f4ffe3521
+	github.com/bhbosman/goFxApp v0.0.0-20250307230611-15e28b32dfad
 	github.com/bhbosman/goFxAppManager v0.0.0-20250307145515-bda0fa4d9959
 	github.com/bhbosman/gocommon v0.0.0-20250307145810-dee67af89371
 	github.com/bhbosman/gocomms v0.0.0-20230730212408-04ba72ddb372
@@ -27,7 +27,9 @@ require (
 )
 
 require (
-	cloud.google.com/go/compute v1.34.0 // indirect
+	cloud.google.com/go/auth v0.15.0 // indirect
+	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
+	cloud.google.com/go/compute/metadata v0.6.0 // indirect
 	github.com/bhbosman/goConnectionManager v0.0.0-20250307224538-a79ceb218fd0 // indirect
 	github.com/bhbosman/goMessages v0.0.0-20250307224348-83ddb4c19467 // indirect
 	github.com/bhbosman/goUi v0.0.0-20250307150712-d06325af4877 // indirect
@@ -36,11 +38,13 @@ require (
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
+	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/gdamore/encoding v1.0.1 // indirect
 	github.com/gdamore/tcell/v2 v2.8.1 // indirect
-	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
+	github.com/go-logr/logr v1.4.2 // indirect
+	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/golang/mock v1.6.0 // indirect
-	github.com/golang/protobuf v1.5.4 // indirect
+	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.5 // indirect
 	github.com/googleapis/gax-go/v2 v2.14.1 // indirect
@@ -53,16 +57,20 @@ require (
 	github.com/stretchr/objx v0.5.2 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/teivah/onecontext v1.3.0 // indirect
-	go.opencensus.io v0.23.0 // indirect
-	go.uber.org/atomic v1.11.0 // indirect
+	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.59.0 // indirect
+	go.opentelemetry.io/otel v1.34.0 // indirect
+	go.opentelemetry.io/otel/metric v1.34.0 // indirect
+	go.opentelemetry.io/otel/trace v1.34.0 // indirect
 	go.uber.org/dig v1.18.1 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
+	golang.org/x/crypto v0.36.0 // indirect
 	golang.org/x/sync v0.12.0 // indirect
 	golang.org/x/sys v0.31.0 // indirect
 	golang.org/x/term v0.30.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
-	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20250122153221-138b5a5a4fd4 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20250219182151-9fdb1cabc7b2 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250227231956-55c901821b1e // indirect
 	google.golang.org/grpc v1.70.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
