@@ -10,7 +10,7 @@ require (
 	github.com/bhbosman/goCommsStacks v0.0.0-20250308055233-8992b9d0c219
 	github.com/bhbosman/goConn v0.0.0-20250307235008-177f4ffe3521
 	github.com/bhbosman/goFxApp v0.0.0-20250308052840-c690d60e479d
-	github.com/bhbosman/goFxAppManager v0.0.0-20250307225418-ef314d0a9319
+	github.com/bhbosman/goFxAppManager v0.0.0-20250308052839-63033ea503a7
 	github.com/bhbosman/gocommon v0.0.0-20250308052839-0ebeb121f996
 	github.com/bhbosman/gocomms v0.0.0-20250308053431-cfd3e830d8a5
 	github.com/bhbosman/goprotoextra v0.0.2
@@ -28,9 +28,9 @@ require (
 	cloud.google.com/go/auth v0.15.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
-	github.com/bhbosman/goConnectionManager v0.0.0-20250307224538-a79ceb218fd0 // indirect
+	github.com/bhbosman/goConnectionManager v0.0.0-20250308054322-587c786bedb0 // indirect
 	github.com/bhbosman/goMessages v0.0.0-20250308052839-b11fc966f96a // indirect
-	github.com/bhbosman/goUi v0.0.0-20250308052840-a0e5fd7e5f88 // indirect
+	github.com/bhbosman/goUi v0.0.0-20250308064519-26f29e163722 // indirect
 	github.com/bhbosman/goerrors v0.0.0-20250307194237-312d070c8e38 // indirect
 	github.com/bhbosman/gomessageblock v0.0.0-20250307141417-ab783e8e2eba // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
@@ -56,10 +56,10 @@ require (
 	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/teivah/onecontext v1.3.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.59.0 // indirect
-	go.opentelemetry.io/otel v1.34.0 // indirect
-	go.opentelemetry.io/otel/metric v1.34.0 // indirect
-	go.opentelemetry.io/otel/trace v1.34.0 // indirect
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.60.0 // indirect
+	go.opentelemetry.io/otel v1.35.0 // indirect
+	go.opentelemetry.io/otel/metric v1.35.0 // indirect
+	go.opentelemetry.io/otel/trace v1.35.0 // indirect
 	go.uber.org/dig v1.18.1 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.36.0 // indirect
